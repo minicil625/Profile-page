@@ -12,48 +12,6 @@ body {
     background-color: #f8f8f8;
 }
 
-/* Nav bar */
-nav {
-    background: #fff;
-    padding: 1rem 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #666;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #333;
-}
-
 /* Content */
 main {
     margin-top: 80px;
@@ -213,26 +171,6 @@ main {
     transform: rotate(180deg);
 }
 
-/* Footer */
-footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-}
-
-.footer-content h3 {
-    margin-bottom: 1rem;
-}
-
-.contact-info {
-    margin-bottom: 1.5rem;
-}
-
-.contact-info p {
-    margin-bottom: 0.5rem;
-}
-
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -244,13 +182,60 @@ footer {
     .edu-exp-section {
         grid-template-columns: 1fr;
     }
+}
 
-    .nav-container {
-        flex-direction: column;
-        gap: 1rem;
+/* ===== Animations ===== */
+.fade-in {
+    animation: fadeIn 1s ease-in both;
+}
+
+.slide-up {
+    animation: slideUp 0.8s ease-out both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animations to sections */
+.hero, .section-card, .skills-section {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* ===== Responsive Enhancements ===== */
+@media (max-width: 1024px) {
+    .hero {
+        gap: 2rem;
     }
-
-    .nav-links {
-        gap: 1rem;
+    .profile-image {
+        width: 200px;
+        height: 200px;
     }
 }
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}
+

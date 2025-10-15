@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
-Route::get('/', function () {
-    return view('profile_page');
-});
+Route::get('/', [PageController::class, 'about'])->name('about');
+Route::get('/project', [PageController::class, 'project'])->name('project');

@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="{{ asset('css/profile_page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/global.css') }}">
 </head>
 <body>
     <!-- Nav bar -->
     <nav>
         <div class="nav-container">
             <div class="logo">Benediktus Darmawan</div>
+
+             <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
+                <li><a href="/">About me</a></li>
+                <li><a href="/project">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -90,12 +96,14 @@
         <div class="footer-content">
             <h3>Contact Me</h3>
             <div class="contact-info">
-                <p>📞 +62 811-227-336</p>
-                <p>📧 benediktus.darmawan001@binus.ac.id</p>
+                <p>📞 {{ $contact['phone'] }}</p>
+                <p>📧 {{ $contact['email'] }}</p>
+                <p>{{ $contact['location'] }}</p>
             </div>
         </div>
     </footer>
 
     <script src="{{ asset('js/profile_page.js') }}"></script>
+    <script src="{{ asset('js/global.js') }}"></script>
 </body>
 </html>
